@@ -35,7 +35,7 @@ export function Form(){
           />
           <input 
           type="text"
-          name="age"
+          name="year"
           placeholder="Ano de lançamento"
           onChange={handleChangeValues}
           />

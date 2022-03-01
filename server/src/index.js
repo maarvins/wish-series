@@ -6,12 +6,7 @@ app.use(cors())
 app.use(express.json())
 
 app.post("/register", (req,res) => {
-    const {name} = req.body
-    const {year} = req.body
-    const {seasons} = req.body
-    const {synopsis} = req.body
-    const {category} = req.body
-    
+    const {name, year, seasons, synopsis, category} = req.body    
 })
 
 app.listen(3001, () => {

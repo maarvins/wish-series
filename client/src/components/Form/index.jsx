@@ -15,10 +15,10 @@ export function Form(){
     const handleClickButton = () => {
       Axios.post("http://localhost:3001/register", {
         name: value.name,
-        age: value.age,
+        fk_year: value.fk_year,
         seasons: value.seasons,
-        synopsis: value.synopsis,
-        category: value.category,
+        synopse: value.synopse,
+        fk_category: value.fk_category,
       }).then((response) => {
         console.log(response)
       }) //guardando os valores do formulario 
@@ -34,8 +34,8 @@ export function Form(){
           onChange={handleChangeValues}
           />
           <input 
-          type="text"
-          name="year"
+          type="number"
+          name="fk_year"
           placeholder="Ano de lançamento"
           onChange={handleChangeValues}
           />
@@ -47,13 +47,13 @@ export function Form(){
           />
           <input 
           type="text"
-          name="synopsis"
+          name="synopse"
           placeholder="Sinopse"
           onChange={handleChangeValues}
           />
           <input 
           type="text"
-          name="category"
+          name="fk_category"
           placeholder="Categoria"
           onChange={handleChangeValues}
           />

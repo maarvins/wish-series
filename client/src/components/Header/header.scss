@@ -1,0 +1,12 @@
+.header-container {
+  cursor: pointer;
+  background-color: #2e2e2e;
+  display: flex;
+  font-family: "MonteCarlo", sans-serif;
+  font-size: 20px;
+  width: 100vw;
+
+  h1 {
+    flex: 1;
+  }
+}

@@ -37,30 +37,36 @@ app.get("/get_categories", (_, res) => {
     conn.end();
 })
 
-app.get("/getCards", (req, res) => {
-
-    let SQL = "SELECT * from series"
-
-    conn.query(SQL, (err, result) => {
-        if (err) console.log(err)
-        else JSON.parse(result)
-    })
-})
 
 app.post("/register", (req, res) => {
     const { name, fk_year, seasons, synopse, fk_category } = req.body
 
-    var sql = "INSERT INTO series (name, fk_year, seasons, synopse, fk_category) VALUES (?,?,?,?,?)";
+    var sql = `
+    INSERT INTO series (name, fk_year, seasons, synopse, fk_category) 
+    VALUES ("${name}",${fk_year},${seasons},"${synopse}",${fk_category})`;
 
-    conn.query(sql, [name, fk_year, seasons, synopse, fk_category], (err, result) => {
+    conn.query(sql, (err, result) => {
         if (err) console.log(err)
-        console.log(result)
-        res.send(result)
+        res.json({ success: true })
     })
 
     conn.end();
 })
 
+app.get("/get_series", (req, res) => {
+    var sql = `
+    SELECT s.id, name, y.year, seasons, synopse, c.category
+    FROM series s
+    LEFT JOIN years y ON (fk_year = y.id)
+    LEFT JOIN categories c ON (fk_category = c.id)
+    `;
+
+    conn.query(sql, function (err, result) {
+        if (err) throw err;
+        res.json(JSON.parse(JSON.stringify(result)))
+    });
+    conn.end();
+})
 
 app.listen(3001, () => {
     console.log("Rodando servidor na porta 3001")

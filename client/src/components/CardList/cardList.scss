@@ -1,0 +1,12 @@
+.card-list-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 50px 100px;
+  flex-direction: column;
+  width: 100vw;
+
+  ul {
+    text-align: center;
+  }
+}

@@ -1,12 +1,15 @@
 .header-container {
   cursor: pointer;
-  background-color: #2e2e2e;
+  background-color: #0a0a0a;
+  color: white;
   display: flex;
   font-family: "MonteCarlo", sans-serif;
   font-size: 20px;
   width: 100vw;
 
   h1 {
+    margin: 10px;
+    padding: 10px;
     flex: 1;
   }
 }

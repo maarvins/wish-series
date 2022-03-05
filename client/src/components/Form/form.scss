@@ -1,19 +1,21 @@
 .register-container {
-  background-color: #0a0a0a;
-  color: #00ff00;
+  background-color: #ecf0f3;
+  color: black;
   padding: 10px 20px;
-  border: 3px solid #00ff00;
-  border-radius: 5px;
+  border: 1px solid #2e2e2e;
+  border-radius: 5%;
   margin-top: 20px;
 
   h1 {
     text-align: center;
     margin-bottom: 10px;
-    font-family: monospace;
+    font-family: "Poppins", sans-serif;
   }
 
   input {
-    background-color: #2e2e2e;
+    background-color: #ecf0f3;
+    border: none;
+    color: black;
     font-size: 15px;
     font-weight: bold;
     display: block;
@@ -34,19 +36,16 @@
   }
 
   button {
-    border: 0.5px solid #00ff00;
     border-radius: 5px;
     height: 30px;
     cursor: pointer;
     padding: 2px 5px;
     margin: 10px 80px;
-    background-color: #0a0a0a;
-    color: #00ff00;
+    background-color: #ecf0f3;
+    color: black;
   }
 
   button:hover {
-    background-color: #00ff00;
-    color: #0a0a0a;
-    transition: 0.5s;
+    transform: scale(1.1);
   }
 }

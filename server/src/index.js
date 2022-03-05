@@ -7,16 +7,6 @@ app.use(express.json())
 
 const conn = require('./db.js')
 
-app.get("/get_name", (_, res) => {
-    let sql = "SELECT * FROM series";
-
-    conn.query(sql, function (err, result) {
-        if (err) throw err;
-        res.json(JSON.parse(JSON.stringify(result)))
-    });
-    conn.end();
-})
-
 app.get("/get_years", (_, res) => {
     let sql = "SELECT * FROM years";
 
@@ -24,7 +14,6 @@ app.get("/get_years", (_, res) => {
         if (err) throw err;
         res.json(JSON.parse(JSON.stringify(result)))
     });
-    conn.end();
 })
 
 app.get("/get_categories", (_, res) => {
@@ -34,11 +23,11 @@ app.get("/get_categories", (_, res) => {
         if (err) throw err;
         res.json(JSON.parse(JSON.stringify(result)))
     });
-    conn.end();
 })
 
 
 app.post("/register", (req, res) => {
+    console.log(req.body)
     const { name, fk_year, seasons, synopse, fk_category } = req.body
 
     var sql = `
@@ -49,8 +38,6 @@ app.post("/register", (req, res) => {
         if (err) console.log(err)
         res.json({ success: true })
     })
-
-    conn.end();
 })
 
 app.get("/get_series", (req, res) => {
@@ -59,13 +46,35 @@ app.get("/get_series", (req, res) => {
     FROM series s
     LEFT JOIN years y ON (fk_year = y.id)
     LEFT JOIN categories c ON (fk_category = c.id)
+    ORDER BY id DESC
     `;
 
     conn.query(sql, function (err, result) {
         if (err) throw err;
-        res.json(JSON.parse(JSON.stringify(result)))
+        else res.json(JSON.parse(JSON.stringify(result)))
     });
-    conn.end();
+})
+
+app.put("/edit", (req, res) => {
+    const { id, name, fk_year, seasons, synopse, fk_category } = req.body
+
+    let SQL = `UPDATE series SET name = ${name}, year = ${fk_year}, seasons = ${seasons}, synopse = ${synopse}, category = ${fk_category}, WHERE id = ${id}`
+
+    conn.query(SQL, (err, result) => {
+        if (err) console.log(err)
+        else res.send(result)
+    })
+})
+
+app.delete("/delete/:id", (req, res) => {
+    const id = req.params
+
+    let SQL = `DELETE FROM series WHERE id = ${id}`
+
+    conn.query(SQL, (err, result) => {
+        if (err) console.log(err)
+        else res.send(result)
+    })
 })
 
 app.listen(3001, () => {

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Card } from "../Card";
+import { baseUrl } from "../../utils";
 
 import "./cardList.scss";
 
@@ -8,7 +9,7 @@ export function CardList() {
   const [listSeries, setListSeries] = useState([]);
 
   useEffect(async () => {
-    await axios.get("http://localhost:3001/get_series").then((response) => {
+    await axios.get(baseUrl+"get_series").then((response) => {
       console.log(response.data);
       setListSeries(response.data);
     });

@@ -23,7 +23,7 @@ WISH SERIES
   
 ### API address
 
-  18.228.119.16:3001/
+  https://18.228.119.16:3001/
   
 ## Functionalities
 

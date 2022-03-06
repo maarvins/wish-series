@@ -65,9 +65,9 @@ WISH SERIES
   [ x ] add a image table on the data base to the user do the upload of the serie picture in the card <br/>
   [ x ] use the react-router (already install) to manipulate some route on the project like the last one that i list before<br/>
   [ x ] clear the code <br/>
-  [ x ] fix the error with the dotenv file to hidde the sensitive data on the db.js
-  [ x ] use Store
-  [ x ] use localStorage to keep the data save on the first charge of data 
+  [ x ] fix the error with the dotenv file to hidde the sensitive data on the db.js <br/>
+  [ x ] use Store <br/>
+  [ x ] use localStorage to keep the data save on the first charge of data <br/>
  
  <br/>
  <br/>

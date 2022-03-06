@@ -1,23 +1,68 @@
-1. falar sobre o servidor, que neste caso foi usado na Amazon (EC2)
-1.1 ubuntu 18.08
-1.2 mysql 8
-1.3 node v16
+WISH SERIES
 
-...
+ <p align="center">
+  <img src="client/public/assets/website-view.gif" width="600px">
+</p>
 
-backend - nodejs (express, cors, pm2)
-frontend - react (react-icons, react-router)
+# React-JS--Crud-Mysql
 
-para executar os projetos, entrar no diretorio cliente e no server e executar o comando npm install
+## Installation
 
-caso necessario, utilizar a api que esta disponivel atraves do endereco http://18.228.119.16:3001/api
+### Client
 
-o frontend ja esta utilizando a api publica mencionada anteriormente 
+  1. `$ cd client`
+  2. `$ npm install` or `$ yarn install`
+  3. `$ npm start` or `$ yarn start`
+  
+### Server
 
-TO DO LIST 
+  1. Change your mySQL database data `server/src/index.js`
+  2. `$ cd server`
+  3. `$ npm install` or `$ yarn`
+  4. `$ npm rum devStart`
+  
+### API address
 
-[] 
-[] 
-[] 
-[] 
-[]
+  18.228.119.16:3001/
+  
+## Functionalities
+
+  + Create series in the database
+  + Read series in the database
+  + Update series in the database
+  + Delete series in the database
+  + Click card to edit and delete
+  
+## Used Libraries
+
+### Front-end
+
+ + `@material-ui`
+ +  `Axios`
+ +  `node-sass
+ +  `react-router`
+ +  `react-select`
+
+### Back-end
+
++ `express`
++ `mysql2`
++ `nodemon`
++ `cors`
+
+
+### TODOLIST
+
+**FRONTEND** => <span>time limit exceeded<span> <br/><br/>
+
+[ x ] finish the frontend (make responsive and style the components by the right way) <br/>
+[ x ] run build (deploy and host the project) <br/>
+
+  
+**BACKEND** => <span>time limit exceeded <span><br/><br/>
+  
+  [ x ] apply the watched and to watch on the series cards <br/>
+  [ x ] add a image table on the data base to the user do the upload of the serie picture in the card <br/>
+  [ x ] use the react-router (already install) to manipulate some route on the project like the last one that i list before<br/>
+  [ x ] clear the code <br/>
+  

@@ -44,13 +44,6 @@ export function Form() {
     }));
   };
 
-  const [handleYear, setHandleYear] = useState(0);
-
-  // const handleInputYear = (e) => {
-  //   let { label, value } = e.target;
-  //   setHandleYear(value);
-  // };
-
   const handleClickButton = () => {
     axios
       .post(baseUrl+"register", {

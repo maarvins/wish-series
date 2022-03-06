@@ -84,7 +84,11 @@ export function Form() {
         placeholder="Sinopse"
         onChange={handleChangeValues}
       />
-      <Select options={getCategories} onChange={handleChangeValues} />
+      <Select 
+        name="category" 
+        options={getCategories} 
+      />
+          
       <button onClick={() => handleClickButton()}>Cadastrar</button>
     </div>
   );

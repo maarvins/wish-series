@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./form.scss";
 import axios from "axios";
 import Select from "react-select";
+import { baseUrl } from "../../utils";
 
 export function Form() {
   const [value, setValues] = useState(); //pegando valores do formulario
@@ -10,7 +11,7 @@ export function Form() {
 
   const years = [];
   useEffect(async () => {
-    await axios.get("http://localhost:3001/get_years").then((response) => {
+    await axios.get(baseUrl+"get_years").then((response) => {
       response.data.forEach((value) => {
         years.push({
           value: value.id,
@@ -25,7 +26,7 @@ export function Form() {
 
   const categories = [];
   useEffect(async () => {
-    await axios.get("http://localhost:3001/get_categories").then((response) => {
+    await axios.get(baseUrl+"get_categories").then((response) => {
       response.data.forEach((value) => {
         categories.push({
           value: value.id,
@@ -52,7 +53,7 @@ export function Form() {
 
   const handleClickButton = () => {
     axios
-      .post("http://localhost:3001/register", {
+      .post(baseUrl+"register", {
         name: value.name,
         fk_year: 1,
         seasons: value.seasons,

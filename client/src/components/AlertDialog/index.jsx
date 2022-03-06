@@ -35,10 +35,6 @@ export default function AlertDialog(props) {
     axios.delete(baseUrl+`delete/${editValues.id}`);
     handleClose()
   }
-  
-  const handleClickOpen = () => {
-    props.setOpen(true);
-  };
 
   const handleClose = () => {
     props.setOpen(false);

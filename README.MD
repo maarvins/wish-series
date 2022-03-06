@@ -39,7 +39,7 @@ WISH SERIES
 
  + `@material-ui`
  +  `Axios`
- +  `node-sass
+ +  `node-sass`
  +  `react-router`
  +  `react-select`
 

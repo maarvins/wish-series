@@ -21,7 +21,7 @@ WISH SERIES
   3. `$ npm install` or `$ yarn`
   4. `$ npm rum devStart`
   
-### API DATABASE address
+### API DATABASE address (instance created in <span>aws<span>)
 
   http://18.228.119.16:3001/get_series
   

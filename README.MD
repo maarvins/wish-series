@@ -69,7 +69,8 @@ WISH SERIES
   [ x ] use Store
   [ x ] use localStorage to keep the data save on the first charge of data 
  
- 
+ <br/>
+ <br/>
  
  ***** P.S. ****** 
  

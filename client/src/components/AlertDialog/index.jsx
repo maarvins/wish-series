@@ -6,6 +6,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogTitle from '@mui/material/DialogTitle';
 import TextField from "@material-ui/core/TextField";
 import axios from 'axios'
+import { baseUrl } from "../../utils";
 
 
 export default function AlertDialog(props) {
@@ -19,7 +20,7 @@ export default function AlertDialog(props) {
   })
 
   const handleEditSerie = () => {
-    axios.put("http://localhost:3001/edit", {
+    axios.put(baseUrl+"edit", {
       id: editValues.id,
       name: editValues.name,
       fk_year: editValues.year,
@@ -31,7 +32,7 @@ export default function AlertDialog(props) {
   }
 
   const handleDeletSerie = () => {
-    axios.delete(`http://localhost:3001/delete/${editValues.id}`);
+    axios.delete(baseUrl+`delete/${editValues.id}`);
     handleClose()
   }
   

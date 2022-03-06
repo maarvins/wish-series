@@ -21,9 +21,9 @@ WISH SERIES
   3. `$ npm install` or `$ yarn`
   4. `$ npm rum devStart`
   
-### API address
+### API DATABASE address
 
-  https://18.228.119.16:3001/
+  http://18.228.119.16:3001/get_series
   
 ## Functionalities
 
